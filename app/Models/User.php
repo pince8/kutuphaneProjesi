@@ -24,7 +24,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'role_id',
         'name',
+        'surname',
+        'phone',
         'email',
         'password',
     ];
@@ -58,4 +61,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getRole(){
+
+        $this->belogsTo(Role::class,'role_id','id');
+    }
+
+    public function getBooks(){
+        $this->hasMany(Book::class,'user_id');
+    }
 }
