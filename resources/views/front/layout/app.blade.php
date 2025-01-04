@@ -100,11 +100,11 @@
           </div>
           <ul class="sidebar-menu">
            
-            
-            <li class="dropdown ">
+            <hr>
+            <li class="dropdown active ">
               <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Ana Sayfa</span></a>
             </li>
-
+          
             <li class="dropdown">
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>Kullanıcılar</span></a>
@@ -113,11 +113,11 @@
                 <li><a class="nav-link" href="widget-data.html">Normal Kullanıcılar</a></li>
               </ul>
             </li>
-
+            
             <li class="dropdown ">
               <a href="{{route('kategorilerListPage')}}" class="nav-link"><i data-feather="monitor"></i><span>Kategoriler</span></a>
             </li>
-
+            
             <li class="dropdown">
               <a href="{{route('publicatorListesi')}}" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>Yayınevleri</span></a>
@@ -126,17 +126,17 @@
                 <li><a class="nav-link" href="widget-data.html"> Pasif Yayın Evleri</a></li>
               </ul>
             </li>
-
+           
 
             <li class="dropdown ">
               <a href="{{route('yazarListesi')}}" class="nav-link"><i data-feather="monitor"></i><span>Yazarlar</span></a>
             </li>
 
-
+            
             <li class="dropdown ">
-              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Kitaplar</span></a>
+              <a href="{{route('bookListesi')}}" class="nav-link"><i data-feather="monitor"></i><span>Kitaplar</span></a>
             </li>
-
+            <hr>
           </ul>
         </aside>
       </div>

@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('book', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('pub_id');
             $table->unsignedBigInteger('user_id')->nullable()->comment('Kitabı ödünç alan kullanıcı'); //index()kullanıcıların hızlı sorgulanması için
+           
             $table->string('name');
             $table->integer('pageNumber')->check('pageNumber > 0');
             $table->boolean('is_lended')->default(0)->comment('1--ödünç verilmiş, 0--ödünç verilmemiş');
@@ -38,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('book');
+        Schema::dropIfExists('books');
     }
 };

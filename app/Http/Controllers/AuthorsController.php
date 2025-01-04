@@ -41,7 +41,6 @@ class AuthorsController extends Controller
 
     public function updateAuthor(Request $request){
 
-      
         $request->validate([
             'authorName' => 'required|string|max:255',
             'authorSurname' => 'required|string|max:255',

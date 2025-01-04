@@ -4,7 +4,7 @@ use App\Http\Controllers\AuthorsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PublicatorController;
-
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +17,7 @@ use App\Http\Controllers\PublicatorController;
 |
 */
 
-Route::get('/templateTest', function () {
+Route::get('/', function () {
     return view('front.layout.app');
 });
 
@@ -87,4 +87,13 @@ Route::get('/publicators/update/{id}', [PublicatorController::class, 'updatePage
 Route::post('/publicators/update/post',[PublicatorController::class,'updatePublicator'])->name('publicatorGuncelle');
 Route::get('/publicators/delete/{id}', [PublicatorController::class, 'publicatorDelete'])->name('panel.publicatorDelete');
 
+///END
+
+///BOOK ROTALARI///
+Route::post('/bookEkle',[BookController::class,'createBook'])->name('bookEkle');
+Route::get('/bookEkleEklemeSayfasi',[BookController::class,'bookpage'])->name('bookSayfasi');
+Route::get('/bookListesi',[BookController::class,'listBooks'])->name('bookListesi');
+Route::get('/books/update/{id}', [BookController::class, 'updatePage'])->name('bookUpdatePage');
+Route::post('/books/update/post',[BookController::class,'updateBook'])->name('bookGuncelle');
+Route::get('/books/delete/{id}', [BookController::class, 'bookDelete'])->name('panel.bookDelete');
 ///END
