@@ -21,17 +21,20 @@ class BookController extends Controller
 
     public function createBook(Request $request){
 
-       
+
         $b=new Book();
-        
         $b->name= $request->bookName;
+        $b->category_id=1;
+        $b->author_id=3;
+        $b->pub_id=1;
+        $b->user_id=1;
         $b->pageNumber= $request->bookPageNumber;
         $b->is_lended= $request->bookIs_lended;
         $b->barkod_no= $request->bookBarkod_no;
         $b->lend_time= $request->bookLend_time;
         
         $b->save();
-
+        
         return redirect()->route('bookListesi')->with('success', 'Kitap başarıyla eklendi.');
        
     }
@@ -49,17 +52,16 @@ class BookController extends Controller
         $request->validate([
             'bookName' => 'required|string|max:255',
             'bookPageNumber' => 'required|string|max:255',
-            'bookIs_lended' => 'required|string|max:255',
-            'bookBarkod_no' => 'required|string|max:255',
+            'bookIs_lended' => 'required|max:255',
+            'bookBarkod_no' => 'required|max:255',
             'bookLend_time'=>'required',
             'bookID'=>'required'
         ]);
        
         $b= Book::find($request->bookID);
-        
-       
+        $b->category_id=1;
         $b->name= $request->bookName;
-        $b->pageNumber= $request->bookpageNumber;
+        $b->pageNumber= $request->bookPageNumber;
         $b->is_lended= $request->bookIs_lended;
         $b->barkod_no= $request->bookBarkod_no;
         $b->lend_time= $request->bookLend_time;

@@ -59,10 +59,10 @@
                         <td>{{ $b->created_at }}</td>
                         <td>{{ $b->updated_at }}</td>
                         <td>
-                            <a href="{{route('bookUpdatePage',$p->id)}}" class="btn btn-primary btn-lg">
+                            <a href="{{route('bookUpdatePage',$b->id)}}" class="btn btn-primary btn-md">
                                  Güncelle
                             </a>
-                            <a href=" {{route('panel.bookDelete',$p->id)}}" class="btn btn-danger btn-lg">
+                            <a href=" {{route('panel.bookDelete',$b->id)}}" class="btn btn-danger btn-md">
                                Sil
                              </a>
                         </td>

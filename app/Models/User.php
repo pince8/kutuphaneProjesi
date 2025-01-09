@@ -12,6 +12,10 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    protected $attributes = [
+        'role_id' => 1,  // Varsayılan olarak 1 değerini atıyoruz
+    ];
+    
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -26,7 +30,6 @@ class User extends Authenticatable
     protected $fillable = [
         'role_id',
         'name',
-        'surname',
         'phone',
         'email',
         'password',
